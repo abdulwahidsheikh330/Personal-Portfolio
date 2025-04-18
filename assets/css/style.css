@@ -1,0 +1,973 @@
+:root
+{
+    --nav:rgba(26, 11, 46, 1);
+    --body:rgba(19, 4, 40, 1);
+    --themeText:rgba(113, 39, 186, 1);
+}
+*
+{
+    margin: 0px;
+    padding: 0px;
+
+}
+body 
+{
+    background-color: var(--body) !important;
+    width: 99%;
+}   
+.font1{
+    font-family: 'Preahvihear', sans-serif;
+}
+.font2{
+    font-family: 'Poppins', sans-serif;
+}
+.text-theme
+{
+    color: var(--themeText) !important;
+}
+.text-body
+{
+    color: var(--body) !important;
+
+}
+nav
+{
+    background-color: var(--nav) ;
+    width: 101%;
+    height: 15vh;
+color:white !important;
+position: sticky !important;
+top: 0px;
+z-index: 1;
+}
+.logospan
+{
+    background-color: var(--themeText);
+    width: 10px;
+height: 10px;
+border-radius: 100px;
+}
+.nav-item-glow:hover , .logo:hover
+{
+    text-shadow: 
+    0 0 2px #fff,
+    0 0 4px #fff,
+    0 0 6px #fff;
+    
+}
+
+
+/* Background color for the navbar in collapsed state */
+.navbar-collapse {
+    background-color: var(--nav); /* Set your desired background color */
+    color: white; /* Optional: Set text color */
+    padding: 15px;
+    border-radius: 20px;
+}
+
+/* Ensure dropdown menu items have background color */
+.navbar-collapse .dropdown-menu {
+    background-color: var(--nav); /* Set dropdown background color */
+    border: none; /* Remove border if necessary */
+}
+
+/* Style the nav links for better visibility */
+.navbar-collapse .nav-link {
+    color: white; /* Ensure text is visible */
+}
+
+
+
+
+
+/* Theme button styling */
+.btn-theme {
+    background-color: var(--themeText);
+    border: 2px solid white;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius:20px !important;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 8px var(--themeText);
+}
+
+.btn-theme:hover {
+    background-color: white;
+    color: var(--body) !important;
+    box-shadow: 0 0 12px white;
+    text-shadow: 0 0 4px var(--themeText);
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in;
+    
+}
+
+.dropdown-menu.bg-body {
+    background-color: var(--nav) !important;
+
+    border: none; 
+}
+.dropdown-item:hover
+{
+    background-color: white !important;
+    color: var(--body) !important;
+    transition: background-color 0.5s ease-in,color 0.5s ease-in; 
+}
+
+.text-glow-white {
+    text-shadow: 
+        0 0 2px #fff,
+        0 0 4px #fff,
+        0 0 6px #fff;
+}
+.text-shadow-white {
+    text-shadow: 
+        -1px -1px 0 #fff,  
+         1px -1px 0 #fff,
+        -1px  1px 0 #fff,
+         1px  1px 0 #fff;
+}
+.text-strong-glow-white {
+    text-shadow: 
+        0 0 2px #fff,
+        0 0 4px #fff,
+        0 0 6px #fff,
+        0 0 8px #fff,
+        0 0 10px #fff;
+}
+
+
+/* nav css ends */
+
+
+/* home css starts */
+
+#home{
+    width: 101%;
+}
+/* Avatar Glow Effect */
+.glow-avatar {
+    width: 150px;
+    height: 150px;
+    box-shadow: 0 0 30px var(--themeText);
+    animation: pulse 2s infinite;
+}
+
+/* Text Glow Animation */
+.text-glow {
+    text-shadow: 0 0 5px var(--themeText), 0 0 10px var(--themeText);
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 20px var(--themeText);
+    }
+    50% {
+        box-shadow: 0 0 40px var(--themeText);
+    }
+    100% {
+        box-shadow: 0 0 20px var(--themeText);
+    }
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .glow-avatar {
+        width: 120px;
+        height: 120px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    p {
+        font-size: 0.9rem;
+    }
+    .cursor
+    {
+        display: none !important;
+    }
+}
+ .m-neg
+ {
+    margin-left: -5%;
+ }
+
+/* home css ends */
+
+
+/* hero css starts */
+.hero-img img
+{
+    height: 100vh;
+    width: 95%;
+    /* margin-left: 10%; */
+}
+
+/* Hero Section Animations */
+.hero-section {
+    overflow: hidden;
+}
+
+.text-animated {
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+.paragraph-animated {
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.btn-animated {
+    animation: fadeInUp 2s ease-in-out;
+}
+
+.img-animated {
+    animation: fadeInRight 2s ease-in-out;
+    border-radius: 15px; /* For a softer image look */
+    /* box-shadow: 0 0 15px var(--themeText); */
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.img-animated:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px white;
+
+}
+
+/* Keyframes for animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.hidden {
+    opacity: 0;
+    transform: translateY(30px); /* Starts slightly below its final position */
+    transition: all 0.8s ease-in-out; /* Smooth fade and movement */
+}
+
+.reveal {
+    opacity: 1 !important;
+    transform: translateY(0);
+}
+
+/* hero css ends  */
+
+
+/* experience css starts  */
+
+
+
+  .timeline {
+    position: relative;
+    margin: 2rem 0;
+    padding: 0 2rem;
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: 10px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background-color: var(--themeText);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--themeText);
+  }
+
+  .timeline-content {
+    margin-left: 50px;
+    padding: 1rem;
+    background-color: rgba(26, 11, 46, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .timeline-content h4 {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+
+  .timeline-content h5 {
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .timeline-content p {
+    margin: 0;
+    line-height: 1.6;
+  }
+
+
+
+
+.work-experience {
+    background-color: var(--body);
+}
+
+.title-animated {
+    font-size: 2.5rem;
+    font-weight: bold;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.experience-card {
+    background: linear-gradient(145deg, rgb(24, 11, 46),rgb(71, 16, 148)) !important;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.experience-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.7);
+}
+
+.experience-card .card-body {
+    text-align: center;
+    padding: 2rem;
+}
+
+.experience-card .card-icon {
+    width: 60px;
+    height: auto;
+    margin-bottom: 1.5rem;
+    animation: fadeInDown 1s ease-in-out ;
+}
+
+.experience-card .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.experience-card .card-text {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.experience-card .btn-theme {
+    /* background-color: var(--themeText); */
+    background:none;
+    border: 1px solid white;
+    color: white;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 5px 15px rgba(113, 39, 186, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.experience-card .btn-theme:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(113, 39, 186, 0.7);
+    color: var(--nav) !important;
+    background-color: white !important;
+}
+
+/* .experience-card .hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-in-out;
+}
+
+.experience-card .reveal {
+    opacity: 1;
+    transform: translateY(0);
+} */
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* experience css ends  */
+
+
+/* testimonial css starts */
+
+
+  /* testimonials css ends  */
+/* Keep your original root variables */
+:root {
+    --backdrop: hsl(0 0% 60% / 0.12);
+    --radius: 14;
+    --border: 3;
+    --backup-border: var(--backdrop);
+    --size: 200;
+}
+
+article:first-of-type {
+    --base: 80;
+    --spread: 500;
+    --outer: 1;
+}
+
+article:last-of-type {
+    --outer: 1;
+    --base: 220;
+    --spread: 200;
+}
+
+/* Keep all your original glow styles */
+[data-glow] {
+    --border-size: calc(var(--border, 2) * 1px);
+    --spotlight-size: calc(var(--size, 150) * 1px);
+    --hue: calc(var(--base) + (var(--xp, 0) * var(--spread, 0)));
+    background-image: radial-gradient(
+        var(--spotlight-size) var(--spotlight-size) at
+        calc(var(--x, 0) * 1px)
+        calc(var(--y, 0) * 1px),
+        hsl(var(--hue, 210) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 70) * 1%) / var(--bg-spot-opacity, 0.1)),
+        transparent
+    );
+    background-color: var(--backdrop, transparent);
+    background-size: calc(100% + (2 * var(--border-size))) calc(100% + (2 * var(--border-size)));
+    background-position: 50% 50%;
+    background-attachment: fixed;
+    border: var(--border-size) solid var(--backup-border);
+    position: relative;
+    touch-action: auto;
+}
+
+[data-glow]::before,
+[data-glow]::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    inset: calc(var(--border-size) * -1);
+    border: var(--border-size) solid transparent;
+    border-radius: calc(var(--radius) * 1px);
+    background-attachment: fixed;
+    background-size: calc(100% + (2 * var(--border-size))) calc(100% + (2 * var(--border-size)));
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    mask:
+        linear-gradient(transparent, transparent),
+        linear-gradient(white, white);
+    mask-clip: padding-box, border-box;
+    mask-composite: intersect;
+}
+
+[data-glow]::before {
+    background-image: radial-gradient(
+        calc(var(--spotlight-size) * 0.75) calc(var(--spotlight-size) * 0.75) at
+        calc(var(--x, 0) * 1px)
+        calc(var(--y, 0) * 1px),
+        hsl(var(--hue, 210) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 50) * 1%) / var(--border-spot-opacity, 1)),
+        transparent 100%
+    );
+    filter: brightness(2);
+}
+
+[data-glow]::after {
+    background-image: radial-gradient(
+        calc(var(--spotlight-size) * 0.5) calc(var(--spotlight-size) * 0.5) at
+        calc(var(--x, 0) * 1px)
+        calc(var(--y, 0) * 1px),
+        hsl(0 100% 100% / var(--border-light-opacity, 1)),
+        transparent 100%
+    );
+}
+
+[data-glow] > [data-glow] {
+    border: none;
+}
+
+[data-glow] > [data-glow]:not(:is(a, button)) {
+    position: absolute;
+    inset: 0;
+    will-change: filter;
+    opacity: var(--outer, 1);
+}
+
+[data-glow] > [data-glow]:not(:is(a, button)) {
+    border-radius: calc(var(--radius) * 1px);
+    border-width: calc(var(--border-size) * 20);
+    filter: blur(calc(var(--border-size) * 10));
+    background: none;
+    pointer-events: none;
+}
+
+[data-glow] > [data-glow]:not(:is(a, button))::before {
+    inset: -10px;
+    border-width: 10px;
+}
+
+
+
+
+/* Add styles for testimonial content */
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 1rem;
+    z-index: 1;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1.5rem;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.designation {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1rem;
+}
+
+.description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+article {
+    min-height: 450px;
+    transition: transform 0.3s ease;
+}
+
+article:hover {
+    transform: translateY(-10px);
+}
+
+.glow_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgba(19, 4, 40, 1);
+    padding: 4rem 0;
+}
+
+/* Button styles */
+button[data-glow] {
+    padding: 0.75rem 2rem;
+    align-self: end;
+    color: hsl(0 0% 80%);
+    /* border: 1px solid var(--themeText) !important; */
+    border-top-right-radius: 50px;
+}
+
+button[data-glow] span {
+    font-weight: bold;
+    background-image: radial-gradient(
+        var(--spotlight-size) var(--spotlight-size) at
+        calc(var(--x, 0) * 1px)
+        calc(var(--y, 0) * 1px),
+        hsl(var(--hue, 210) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 70) * 1%) / var(--bg-spot-opacity, 1)),
+        transparent
+    );
+    background-color: var(--backdrop, transparent);
+    background-position: 50% 50%;
+    background-attachment: fixed;
+    background-clip: text;
+    -webkit-background-clip: text;
+    filter: brightness(1.5);
+    color: transparent;
+
+}
+
+.btn-interact:hover
+{
+    background-color: radial-gradient(
+        var(--spotlight-size) var(--spotlight-size) at
+        calc(var(--x, 0) * 1px)
+        calc(var(--y, 0) * 1px),
+        hsl(var(--hue, 210) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 70) * 1%) / var(--bg-spot-opacity, 1)),
+        transparent
+    );
+
+    a{
+        color: white !important;
+    }
+    
+}
+
+.btn-interact a
+{
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* projects css starts */
+.project-card {
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+  }
+
+  .mockup-frame {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  /* projects css ends  */
+
+  /* looking for css starts */
+  #LookingFor img {
+    /* max-width: 100%; */
+    height: auto;
+    max-height: 400px; /* Adjust the max-height as needed */
+    margin: 0 auto;
+}
+
+/* looking for css ends  */
+
+
+/* contact css starts */
+
+#contact {
+    padding: 4rem 0;
+  }
+
+  #contact .form-control {
+    background-color: #252945;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 5px;
+  }
+
+  #contact .form-control:focus {
+    background-color: #1e2235;
+    border-color: var(--themeText);
+    box-shadow: 0 0 5px var(--themeText);
+  }
+
+  #contact .btn-theme {
+    border-radius: 50px;
+  }
+
+  /* contact css ends  */
+    
+.cursor
+{
+    position: fixed;    
+    width: 25px;
+    height: 25px;
+    border-radius: 100px;
+    background-color: transparent;  
+    
+    box-shadow: 0 0 30px var(--themeText);
+    animation: pulse 1s infinite;
+    z-index: 100;
+    /* mix-blend-mode:difference; */
+}
+html , body  {
+    cursor: none ;
+    
+}
+a
+{
+    cursor: none !important;
+}
+button
+{
+    cursor: none !important;
+}
+
+
+
+
+
+.text-animation{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.text-animation span{
+    position: relative;
+}
+
+.text-animation span::before{
+    content: "Developer";
+    color: var(--themeText);
+    animation: words 20s infinite;
+}
+
+.text-animation span::after{
+    content: "";
+    background-color: var(--body);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--body);
+    right: -8px;
+    animation: cursors 0.6s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursors{
+    to{
+        border-left: 2px solid white;
+    }
+}
+
+@keyframes words{
+    0%,
+    20%{
+        content: "Designer";
+    }
+    21%,
+    40%{
+        content: "Web Desinger";
+    }
+    41%,
+    60%{
+        content: "UI / UX Designer";
+    }
+    61%,
+    80%{
+        content: "Web Developer";
+    }
+    81%,
+    100%{
+        content: "Software Engineer";
+    }
+}
+@keyframes typing{
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95%{
+        width: 0% ;
+    }
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85%{
+         width: calc(100% + 8px);
+    }
+
+}
+
+
+
+
+/* education css starts */
+
+.education{
+    padding: 10px 15px;
+    background-color: transparent;
+}
+
+.education h2{
+    margin-bottom: 5rem;
+}
+
+.education .timeline-items{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+
+}
+
+.education .timeline-item::before{
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: calc(100% + 40px);
+    background-color: var(--themeText);
+    left: calc(50% - 1px);
+
+}
+
+.education .timeline-item{
+    margin-bottom: 40px;
+    width: 100%;
+    position: relative;
+
+}
+
+.education .timeline-item:last-child{
+    margin-bottom: 0;
+
+}
+
+.education .timeline-item:nth-child(odd){
+    padding-right: calc(50% + 30px);
+    text-align: right;
+}
+
+.education .timeline-item:nth-child(even){
+    padding-left: calc(50% + 30px);
+}
+
+.education .timeline-dot{
+    height: 21px;
+    width: 21px;
+    background-color: var(--themeText);
+    box-shadow: 0 0 25px var(--themeText),
+                0 0 50px var(--themeText);
+    position: absolute;
+    left: calc(50% - 8px);
+    border-radius: 50%; 
+    top: 10%;            
+}
+
+.education .timeline-date{
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+    margin: 6px 0 15px;
+
+}
+
+.education .timeline-content{
+    background-color: var(--body);
+    border: 3px solid var(--themeText);
+    padding: 30px 50px;
+    border-radius: 4rem;
+    box-shadow: 0 0 10px var(--themeText);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    
+}
+
+.education .timeline-content:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--themeText);
+}
+
+.education .timeline-content h3{
+    font-size: 20px;
+    color: white;
+    margin: 0 0 10px;
+    font-weight: 500;
+
+}
+
+.education .timeline-content p{
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+}
+
+
+
+
+
+/* education css ends  */
+
+
+footer
+{
+    width: 101%;
+}
+.footer a {
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--themeText);
+}
+
+.footer .btn-outline-light {
+    transition: transform 0.3s ease;
+}
+
+.footer .btn-outline-light:hover {
+    transform: scale(1.1);
+    background-color: var(--themeText);
+    color: var(--body);
+}
