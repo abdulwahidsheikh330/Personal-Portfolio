@@ -66,6 +66,7 @@ document.addEventListener("mouseenter", () => cursor.style.display = "block");
 // ==========================================================
 
 const EMAILJS_PUBLIC_KEY = 'NTFd5sZk59X4xZt6s';        // ⚠️ Paste your Public Key here (Account → General)
+
 const EMAILJS_SERVICE_ID = 'service_2ufznhq';
 const EMAILJS_CONTACT_TPL = 'template_3ia1vfy';       // "Contact Us" template
 const EMAILJS_QUOTE_TPL = 'template_aw3siwp';       // "My Default Template" (Quote)
