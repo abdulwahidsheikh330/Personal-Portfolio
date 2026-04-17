@@ -34,6 +34,41 @@ document.getElementById('show-more-btn').addEventListener('click', function () {
 });
 
 
+// ========== BACK TO TOP BUTTON ==========
+const backToTopBtn = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+    backToTopBtn.classList.toggle('show', window.scrollY > 400);
+});
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+
+// ========== ACTIVE NAV HIGHLIGHTING ON SCROLL ==========
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section[id], div[id="home"]');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+    const highlightNav = () => {
+        let currentSection = '';
+        sections.forEach(section => {
+            if (window.scrollY >= section.offsetTop - 100) {
+                currentSection = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('nav-active');
+            if (link.getAttribute('href') === `#${currentSection}`) {
+                link.classList.add('nav-active');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', highlightNav);
+    highlightNav();
+});
+
+
 // ========== CUSTOM CURSOR ==========
 const cursor = document.querySelector(".cursor");
 document.addEventListener("mousemove", (e) => {

@@ -59,6 +59,9 @@
     }
     </script>
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23130428'/><text x='50' y='68' font-family='serif' font-size='52' font-weight='bold' text-anchor='middle' fill='%237127ba'>AW</text></svg>">
+
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Preahvihear&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -99,10 +102,10 @@
                             Services
                         </a>
                         <ul class="dropdown-menu bg-body text-white" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item text-white" href="#App">App Development</a></li>
-                            <li><a class="dropdown-item text-white" href="#FE">Front End Development</a></li>
-                            <li><a class="dropdown-item text-white" href="#BE">BackEnd Development</a></li>
-                            <li><a class="dropdown-item text-white" href="#MA">Management And Analysis</a></li>
+                            <li><a class="dropdown-item text-white" href="#services">React / MERN App Development</a></li>
+                            <li><a class="dropdown-item text-white" href="#services">Frontend Development</a></li>
+                            <li><a class="dropdown-item text-white" href="#services">Backend & API Development</a></li>
+                            <li><a class="dropdown-item text-white" href="#services">Landing Pages & Portfolios</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -111,12 +114,6 @@
                   
                     <li class="nav-item nav-item-glow">
                         <a class="nav-link text-white" href="#contact">Contact Me</a>
-                    </li>
-                    <!-- Download CV Button -->
-                    <li class="nav-item">
-                        <!-- <a class="btn btn-theme text-white font2 mt-1" href="path/to/your-cv.pdf" download>
-                            Download CV
-                        </a> -->
                     </li>
                 </ul>
                 <a target="_blank" class="btn btn-theme text-white font2 mt-1" href="assets/CV/CV.pdf" download>
@@ -438,62 +435,55 @@
 <section id="services" class="container-fluid py-5 work-experience text-white font2 ">
     <div class="container">
         <!-- Section Title -->
-        <h2 data-aos="fade-up" class="text-center mb-5  font1">My <span class="text-theme">Services</span></h2>
+        <h2 data-aos="fade-up" class="text-center mb-2 font1">My <span class="text-theme">Services</span></h2>
+        <p data-aos="fade-up" class="text-center text-light mb-5">What I can build for you — from idea to deployment.</p>
 
         <!-- Cards Grid -->
-        <div id="App" class="row g-4">
-            <!-- Card 1 -->
+        <div class="row g-4">
+            <!-- Card 1: React / MERN App Development -->
             <div class="col-12 col-md-6 col-lg-6" data-aos="fade-down">
-                <div class="card experience-card ">
+                <div class="card experience-card">
                     <div class="card-body">
-                        <img src="assets/icons/JAVA.png" alt="Java App Development" class="card-icon" loading="lazy">
-                        <h5 class="card-title">JAVA App Development</h5>
-                        <p class="card-text">Take your client onboard seamlessly by our amazing tool of digital onboard processes.</p>
-                        <!-- <a href="#" class="btn btn-theme font1" >Learn More</a> -->
-              <button class="btn btn-theme  font1" data-bs-toggle="modal" data-bs-target="#quoteModal">Learn More</button>
-
+                        <img src="assets/icons/Frontend.png" alt="React MERN App Development" class="card-icon" loading="lazy">
+                        <h5 class="card-title">React / MERN App Development</h5>
+                        <p class="card-text">Full-featured web applications built end-to-end with React.js, Node.js, Express.js, and MongoDB. From interactive dashboards to enterprise-grade systems — scalable, fast, and production-ready.</p>
+                        <button class="btn btn-theme font1" data-bs-toggle="modal" data-bs-target="#quoteModal">Get a Quote</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 2 -->
-            <div id="FE" class="col-12 col-md-6 col-lg-6" data-aos="fade-down">
-                <div class="card experience-card ">
+            <!-- Card 2: Frontend Development -->
+            <div class="col-12 col-md-6 col-lg-6" data-aos="fade-down">
+                <div class="card experience-card">
                     <div class="card-body">
                         <img src="assets/icons/Frontend.png" alt="Frontend Development" class="card-icon" loading="lazy">
-                        <h5 class="card-title">Front End Development</h5>
-                        <p class="card-text">Take your client onboard seamlessly by our amazing tool of digital onboard processes.</p>
-                        <!-- <a href="#" class="btn btn-theme font1">Learn More</a> -->
-              <button class="btn btn-theme  font1" data-bs-toggle="modal" data-bs-target="#quoteModal">Learn More</button>
-
+                        <h5 class="card-title">Frontend Development</h5>
+                        <p class="card-text">Pixel-perfect, fully responsive UIs using React.js, Next.js, Tailwind CSS, Bootstrap, and Material UI. I turn Figma designs or ideas into smooth, performant user interfaces that work on every screen size.</p>
+                        <button class="btn btn-theme font1" data-bs-toggle="modal" data-bs-target="#quoteModal">Get a Quote</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 3 -->
-            <div id="BE" class="col-12 col-md-6 col-lg-6">
-                <div class="card experience-card " data-aos="fade-up">
+            <!-- Card 3: Backend & API Development -->
+            <div class="col-12 col-md-6 col-lg-6" data-aos="fade-up">
+                <div class="card experience-card">
                     <div class="card-body">
-                        <img src="assets/icons/Backend.png" alt="Backend Development" class="card-icon" loading="lazy">
-                        <h5 class="card-title">Backend Development</h5>
-                        <p class="card-text">Take your client onboard seamlessly by our amazing tool of digital onboard processes.</p>
-                        <!-- <a href="#" class="btn btn-theme font1">Learn More</a> -->
-              <button class="btn btn-theme  font1" data-bs-toggle="modal" data-bs-target="#quoteModal">Learn More</button>
-
+                        <img src="assets/icons/Backend.png" alt="Backend and API Development" class="card-icon" loading="lazy">
+                        <h5 class="card-title">Backend & API Development</h5>
+                        <p class="card-text">Robust REST APIs built with Node.js and Express.js, connected to MongoDB or MySQL. Includes JWT authentication, role-based access control, and clean architecture that scales with your business.</p>
+                        <button class="btn btn-theme font1" data-bs-toggle="modal" data-bs-target="#quoteModal">Get a Quote</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 4 -->
-            <div  id="MA" class="col-12 col-md-6 col-lg-6">
-                <div class="card experience-card " data-aos="fade-up">
+            <!-- Card 4: Landing Pages & Portfolios -->
+            <div class="col-12 col-md-6 col-lg-6" data-aos="fade-up">
+                <div class="card experience-card">
                     <div class="card-body">
-                        <img src="assets/icons/Management.png" alt="Management and Analysis" class="card-icon" loading="lazy">
-                        <h5 class="card-title">Management And Analysis</h5>
-                        <p class="card-text">Take your client onboard seamlessly by our amazing tool of digital onboard processes.</p>
-                        <!-- <a href="#" class="btn btn-theme font1">Learn More</a> -->
-              <button class="btn btn-theme  font1" data-bs-toggle="modal" data-bs-target="#quoteModal">Learn More</button>
-
+                        <img src="assets/icons/Management.png" alt="Landing Pages and Portfolio Websites" class="card-icon" loading="lazy">
+                        <h5 class="card-title">Landing Pages & Portfolios</h5>
+                        <p class="card-text">High-converting landing pages and professional portfolio websites for businesses and individuals. Clean design, fast load times, SEO-optimised, and built to make a lasting first impression.</p>
+                        <button class="btn btn-theme font1" data-bs-toggle="modal" data-bs-target="#quoteModal">Get a Quote</button>
                     </div>
                 </div>
             </div>
@@ -1003,9 +993,12 @@
 
 
 
-  <div data-glow class="cursor  ">
-    
-     </div>
+  <div data-glow class="cursor"></div>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" title="Back to top" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
 
     <script src="assets/bootstrap-5.0.2-dist/js/bootstrap.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

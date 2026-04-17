@@ -1150,6 +1150,45 @@ button
 /* education css ends  */
 
 
+/* ===================== BACK TO TOP ===================== */
+#backToTop {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: var(--themeText);
+    border: 2px solid rgba(255,255,255,0.2);
+    color: white;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: none;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 12px rgba(113, 39, 186, 0.5);
+}
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+#backToTop:hover {
+    box-shadow: 0 0 20px var(--themeText);
+    transform: translateY(-3px);
+}
+
+/* ===================== ACTIVE NAV LINK ===================== */
+.nav-link.nav-active {
+    color: var(--themeText) !important;
+    text-shadow: 0 0 8px var(--themeText);
+}
+
 /* stats section css starts */
 .stats-section {
     background: linear-gradient(90deg, rgba(26,11,46,0.9), rgba(71,16,148,0.2), rgba(26,11,46,0.9));
