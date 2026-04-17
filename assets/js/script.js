@@ -1,187 +1,147 @@
+// ========== SCROLL REVEAL ==========
 document.addEventListener("DOMContentLoaded", () => {
-    const observerOptions = {
-        root: null, // The viewport is the root
-        threshold: 0.2, // Trigger when 20% of the element is visible
-    };
-
-    const revealOnScroll = (entries, observer) => {
+    const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Add the reveal class to the element
                 entry.target.classList.add("reveal");
-
-                // Remove the hidden class to ensure it remains visible
                 entry.target.classList.remove("hidden");
-
-                // Stop observing the element for performance
-                observer.unobserve(entry.target);
+                obs.unobserve(entry.target);
             }
         });
-    };
+    }, { root: null, threshold: 0.2 });
 
-    const observer = new IntersectionObserver(revealOnScroll, observerOptions);
-
-    // Target all elements with the "hidden" class
-    const elementsToReveal = document.querySelectorAll(".hidden");
-    elementsToReveal.forEach(element => observer.observe(element));
+    document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
 });
 
 
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    const observerOptions = {
-        root: null,
-        threshold: 0.2,
-    };
-
-    const revealOnScroll = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("reveal");
-                observer.unobserve(entry.target);
-            }
-        });
-    };
-
-    const observer = new IntersectionObserver(revealOnScroll, observerOptions);
-
-    const hiddenElements = document.querySelectorAll(".hidden");
-    hiddenElements.forEach(element => observer.observe(element));
-});
-
-
-
-// testimonials js starts 
-
-// Isolated pointer tracking for testimonials
-const useTestimonialPointerGlow = () => {
-    const syncPointer = ({ x: pointerX, y: pointerY }) => {
-        const x = pointerX.toFixed(2);
-        const y = pointerY.toFixed(2);
-        const xp = (pointerX / window.innerWidth).toFixed(2);
-        const yp = (pointerY / window.innerHeight).toFixed(2);
-        
-        document.documentElement.style.setProperty('--testimonial-x', x);
-        document.documentElement.style.setProperty('--testimonial-xp', xp);
-        document.documential-style.setProperty('--testimonial-y', y);
-        document.documentElement.style.setProperty('--testimonial-yp', yp);
-    };
-    
-    // Use a specific container to avoid conflicts
-    const testimonialSection = document.querySelector('.testimonial-section');
-    testimonialSection.addEventListener('pointermove', syncPointer);
-    return () => testimonialSection.removeEventListener('pointermove', syncPointer);
-};
-
-const createTestimonialCard = (testimonial) => {
-    const card = document.createElement('article');
-    card.className = 'testimonial-card';
-    card.setAttribute('data-testimonial-glow', '');
-    
-    card.innerHTML = `
-        <div class="profile-image">
-            <img src="${testimonial.image}" alt="${testimonial.name}">
-        </div>
-        <div class="testimonial-content">
-            <h3 class="client-name">${testimonial.name}</h3>
-            <p class="client-designation">${testimonial.designation}</p>
-            <p class="client-review">${testimonial.review}</p>
-            <button class="learn-more-btn" data-testimonial-glow>
-                <span>Learn More</span>
-            </button>
-        </div>
-        <span data-testimonial-glow></span>
-    `;
-    
-    return card;
-};
-
-// Initialize only when testimonial section exists
-const initializeTestimonials = () => {
-    const testimonialSection = document.querySelector('.testimonial-section');
-    if (!testimonialSection) return;
-    
-    useTestimonialPointerGlow();
-    
-    const grid = document.getElementById('testimonialGrid');
-    
-    TESTIMONIALS.forEach(testimonial => {
-        const card = createTestimonialCard(testimonial);
-        grid.appendChild(card);
-    });
-};
-
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', initializeTestimonials);
-
-
-
-
+// ========== POINTER GLOW ==========
 const usePointerGlow = () => {
-    const syncPointer = ({ x: pointerX, y: pointerY }) => {
-        const x = pointerX.toFixed(2);
-        const y = pointerY.toFixed(2);
-        const xp = (pointerX / window.innerWidth).toFixed(2);
-        const yp = (pointerY / window.innerHeight).toFixed(2);
-        
-        document.documentElement.style.setProperty('--x', x);
-        document.documentElement.style.setProperty('--xp', xp);
-        document.documentElement.style.setProperty('--y', y);
-        document.documentElement.style.setProperty('--yp', yp);
+    const sync = ({ x, y }) => {
+        document.documentElement.style.setProperty('--x', x.toFixed(2));
+        document.documentElement.style.setProperty('--xp', (x / window.innerWidth).toFixed(2));
+        document.documentElement.style.setProperty('--y', y.toFixed(2));
+        document.documentElement.style.setProperty('--yp', (y / window.innerHeight).toFixed(2));
     };
-    
-    document.body.addEventListener('pointermove', syncPointer);
-    return () => document.body.removeEventListener('pointermove', syncPointer);
+    document.body.addEventListener('pointermove', sync);
 };
-
-// Initialize
-document.addEventListener('DOMContentLoaded', () => {
-    usePointerGlow();
-});
-// testimonials js ends 
+document.addEventListener('DOMContentLoaded', usePointerGlow);
 
 
-// projects js starts
-
-document.querySelector("form").addEventListener("submit", function (e) {
-    e.preventDefault();
-    alert("Quote request submitted successfully!");
-    document.querySelector("#quoteModal").classList.remove("show");
-    document.querySelector("form").reset();
-});
-
-// document.getElementById('show-more-btn').addEventListener('click', function() {
-//     document.querySelectorAll('.hidden-projects').forEach(function(project) {
-//       project.classList.remove('d-none');
-//     });
-//     this.style.display = 'none';
-//   });
-
-document.getElementById('show-more-btn').addEventListener('click', function() {
-    document.querySelectorAll('#hidden-projects').forEach(function(project) {
-      project.classList.remove('d-none');
-    });
+// ========== SHOW MORE PROJECTS ==========
+document.getElementById('show-more-btn').addEventListener('click', function () {
+    document.querySelectorAll('#hidden-projects').forEach(p => p.classList.remove('d-none'));
     this.style.display = 'none';
-  });
-// projects js ends 
-
-
-
-  
-let cursor = document.querySelector(".cursor");
-document.addEventListener("mousemove", function(dets) {
-    cursor.style.left = dets.x + "px";
-    cursor.style.top = dets.y + "px";
 });
 
-document.addEventListener("mouseleave", function() {
-    cursor.style.display = "none" ;
+
+// ========== CUSTOM CURSOR ==========
+const cursor = document.querySelector(".cursor");
+document.addEventListener("mousemove", (e) => {
+    cursor.style.left = e.x + "px";
+    cursor.style.top = e.y + "px";
+});
+document.addEventListener("mouseleave", () => cursor.style.display = "none");
+document.addEventListener("mouseenter", () => cursor.style.display = "block");
+
+
+// ==========================================================
+//  EMAILJS — EMAIL INTEGRATION
+//
+//  SETUP STEPS (one-time, takes ~5 minutes):
+//
+//  1. Sign up FREE at https://www.emailjs.com
+//  2. Add an Email Service → connect your Gmail account
+//     → copy the Service ID  (looks like: service_xxxxxxx)
+//  3. Create an Email Template for Contact messages:
+//     Variables to use in the template body:
+//       {{from_name}}  {{from_email}}  {{subject}}  {{message}}
+//     → copy the Template ID (looks like: template_xxxxxxx)
+//  4. Create a second Email Template for Quote requests:
+//     Variables to use in the template body:
+//       {{from_name}}  {{from_email}}  {{phone}}
+//       {{project_type}}  {{budget}}  {{timeline}}  {{details}}
+//     → copy the Template ID
+//  5. Go to Account → General → copy your Public Key
+//  6. Paste all four values below and save.
+// ==========================================================
+
+const EMAILJS_PUBLIC_KEY = 'NTFd5sZk59X4xZt6s';        // ⚠️ Paste your Public Key here (Account → General)
+const EMAILJS_SERVICE_ID = 'service_2ufznhq';
+const EMAILJS_CONTACT_TPL = 'template_3ia1vfy';       // "Contact Us" template
+const EMAILJS_QUOTE_TPL = 'template_aw3siwp';       // "My Default Template" (Quote)
+
+emailjs.init(EMAILJS_PUBLIC_KEY);
+
+
+// ---- Shared helpers ----
+function setLoading(btnId, normalId, loadingId, isLoading) {
+    document.getElementById(btnId).disabled = isLoading;
+    document.getElementById(normalId).classList.toggle('d-none', isLoading);
+    document.getElementById(loadingId).classList.toggle('d-none', !isLoading);
+}
+
+function showFeedback(successId, errorId, isSuccess) {
+    document.getElementById(successId).classList.toggle('d-none', !isSuccess);
+    document.getElementById(errorId).classList.toggle('d-none', isSuccess);
+    setTimeout(() => {
+        document.getElementById(successId).classList.add('d-none');
+        document.getElementById(errorId).classList.add('d-none');
+    }, 7000);
+}
+
+
+// ========== CONTACT FORM ==========
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    setLoading('contactSubmitBtn', 'contactSubmitText', 'contactLoadingText', true);
+
+    const params = {
+        from_name: document.getElementById('nameC').value.trim(),
+        from_email: document.getElementById('emailC').value.trim(),
+        subject: document.getElementById('subjectC').value.trim(),
+        message: document.getElementById('messageC').value.trim(),
+    };
+
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_CONTACT_TPL, params)
+        .then(() => {
+            setLoading('contactSubmitBtn', 'contactSubmitText', 'contactLoadingText', false);
+            showFeedback('contactSuccessMsg', 'contactErrorMsg', true);
+            this.reset();
+        })
+        .catch((err) => {
+            console.error('Contact form error:', err);
+            setLoading('contactSubmitBtn', 'contactSubmitText', 'contactLoadingText', false);
+            showFeedback('contactSuccessMsg', 'contactErrorMsg', false);
+        });
 });
 
-document.addEventListener("mouseenter", function() {
-    cursor.style.display = "block";
-});
-  
 
-//   contact js ends
+// ========== QUOTE FORM ==========
+document.getElementById('quoteForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    setLoading('quoteSubmitBtn', 'quoteSubmitText', 'quoteLoadingText', true);
+
+    const params = {
+        from_name: document.getElementById('quoteName').value.trim(),
+        from_email: document.getElementById('quoteEmail').value.trim(),
+        phone: document.getElementById('quotePhone').value.trim() || 'Not provided',
+        project_type: document.getElementById('quoteProjectType').value || 'Not specified',
+        budget: document.getElementById('quoteBudget').value || 'Not specified',
+        timeline: document.getElementById('quoteTimeline').value || 'Not specified',
+        details: document.getElementById('quoteDetails').value.trim(),
+    };
+
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_QUOTE_TPL, params)
+        .then(() => {
+            setLoading('quoteSubmitBtn', 'quoteSubmitText', 'quoteLoadingText', false);
+            showFeedback('quoteSuccessMsg', 'quoteErrorMsg', true);
+            this.reset();
+        })
+        .catch((err) => {
+            console.error('Quote form error:', err);
+            setLoading('quoteSubmitBtn', 'quoteSubmitText', 'quoteLoadingText', false);
+            showFeedback('quoteSuccessMsg', 'quoteErrorMsg', false);
+        });
+});

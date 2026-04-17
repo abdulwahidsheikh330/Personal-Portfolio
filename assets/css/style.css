@@ -700,30 +700,223 @@ button[data-glow] span {
 /* looking for css ends  */
 
 
-/* contact css starts */
+/* ===================== HERO ROLE LINE ===================== */
+.hero-role-line {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--themeText);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.85;
+}
+.text-secondary-light {
+    color: rgba(255,255,255,0.5) !important;
+}
 
+/* ===================== QUOTE MODAL ===================== */
+
+/* Force dark theme — override Bootstrap's white modal-content */
+#quoteModal .modal-content,
+.quote-modal-content {
+    background-color: var(--body) !important;
+    border: 1px solid rgba(113, 39, 186, 0.4) !important;
+    border-radius: 16px !important;
+    overflow: hidden;
+}
+
+#quoteModal .modal-body {
+    background-color: var(--body) !important;
+}
+
+.quote-modal-header {
+    background: linear-gradient(135deg, rgba(71,16,148,0.7), rgba(26,11,46,1)) !important;
+    border-bottom: 1px solid rgba(113, 39, 186, 0.4) !important;
+    padding: 1.4rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Force label visibility inside the dark modal */
+#quoteModal .form-label {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-size: 0.88rem;
+}
+
+.quote-input-icon {
+    background-color: rgba(113, 39, 186, 0.25) !important;
+    border: 1px solid rgba(113, 39, 186, 0.45) !important;
+    border-right: none !important;
+    color: var(--themeText) !important;
+    font-size: 0.9rem;
+}
+
+.quote-input,
+#quoteModal .form-control,
+#quoteModal .form-select {
+    background-color: rgba(255, 255, 255, 0.06) !important;
+    color: white !important;
+    border: 1px solid rgba(113, 39, 186, 0.4) !important;
+    border-left: none !important;
+    border-radius: 0 8px 8px 0 !important;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+#quoteModal .form-control:focus,
+#quoteModal .form-select:focus,
+.quote-input:focus {
+    background-color: rgba(113, 39, 186, 0.12) !important;
+    border-color: var(--themeText) !important;
+    box-shadow: 0 0 0 2px rgba(113, 39, 186, 0.25) !important;
+    color: white !important;
+    outline: none;
+}
+
+.quote-input::placeholder,
+#quoteModal .form-control::placeholder { color: rgba(255,255,255,0.3) !important; }
+
+.quote-input option,
+#quoteModal .form-select option {
+    background-color: #1a0b2e !important;
+    color: white !important;
+}
+
+/* ===================== CONTACT SECTION ===================== */
 #contact {
     padding: 4rem 0;
-  }
+}
 
-  #contact .form-control {
-    background-color: #252945;
-    color: white;
-    border: 1px solid #444;
-    border-radius: 5px;
-  }
+.contact-info-card {
+    background: linear-gradient(145deg, rgba(26,11,46,0.95), rgba(71,16,148,0.25));
+    border: 1px solid rgba(113, 39, 186, 0.3);
+    border-radius: 16px;
+    padding: 2rem;
+    height: 100%;
+}
 
-  #contact .form-control:focus {
-    background-color: #1e2235;
-    border-color: var(--themeText);
-    box-shadow: 0 0 5px var(--themeText);
-  }
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.4rem;
+}
 
-  #contact .btn-theme {
+.contact-info-icon {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    background: rgba(113, 39, 186, 0.25);
+    border: 1px solid rgba(113, 39, 186, 0.45);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--themeText);
+    font-size: 0.9rem;
+}
+
+.contact-info-label {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 2px;
+}
+
+.contact-info-value {
+    color: rgba(255,255,255,0.85);
+    font-size: 0.88rem;
+    text-decoration: none;
+    word-break: break-all;
+    transition: color 0.2s;
+}
+
+.contact-info-value:hover { color: var(--themeText); }
+
+.btn-outline-theme {
+    border: 1px solid rgba(113, 39, 186, 0.7);
+    color: rgba(255,255,255,0.9) !important;
     border-radius: 50px;
-  }
+    font-size: 0.82rem;
+    padding: 5px 14px;
+    background: rgba(113, 39, 186, 0.15);
+    transition: all 0.25s;
+}
 
-  /* contact css ends  */
+.btn-outline-theme:hover {
+    background: var(--themeText) !important;
+    border-color: var(--themeText) !important;
+    color: white !important;
+    box-shadow: 0 0 10px rgba(113, 39, 186, 0.5);
+}
+
+.contact-form-card {
+    background: linear-gradient(145deg, rgba(26,11,46,0.98), rgba(71,16,148,0.2));
+    border: 1px solid rgba(113, 39, 186, 0.35);
+    border-radius: 16px;
+    padding: 2rem;
+}
+
+/* Force label visibility in contact form */
+.contact-form-card .form-label {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-size: 0.88rem;
+}
+
+.contact-input-icon {
+    background-color: rgba(113, 39, 186, 0.25) !important;
+    border: 1px solid rgba(113, 39, 186, 0.45) !important;
+    border-right: none !important;
+    color: var(--themeText) !important;
+    font-size: 0.9rem;
+}
+
+.contact-input {
+    background-color: rgba(255, 255, 255, 0.06) !important;
+    color: white !important;
+    border: 1px solid rgba(113, 39, 186, 0.4) !important;
+    border-left: none !important;
+    border-radius: 0 8px 8px 0 !important;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+textarea.contact-input {
+    border-left: 1px solid rgba(113, 39, 186, 0.4) !important;
+    border-radius: 8px !important;
+}
+
+.contact-input:focus {
+    background-color: rgba(113, 39, 186, 0.12) !important;
+    border-color: var(--themeText) !important;
+    box-shadow: 0 0 0 2px rgba(113, 39, 186, 0.25) !important;
+    color: white !important;
+    outline: none;
+}
+
+.contact-input::placeholder { color: rgba(255,255,255,0.3) !important; }
+
+/* ===================== FORM FEEDBACK ALERTS ===================== */
+.form-feedback-success {
+    background: rgba(34, 197, 94, 0.12);
+    border: 1px solid rgba(34, 197, 94, 0.4);
+    color: #86efac;
+    border-radius: 10px;
+    padding: 0.9rem 1.2rem;
+    font-size: 0.88rem;
+}
+
+.form-feedback-error {
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    color: #fca5a5;
+    border-radius: 10px;
+    padding: 0.9rem 1.2rem;
+    font-size: 0.88rem;
+}
+
+.form-feedback-error a { color: #fca5a5; }
+
+/* contact css ends */
     
 .cursor
 {
@@ -766,9 +959,9 @@ button
 }
 
 .text-animation span::before{
-    content: "Developer";
+    content: "React Developer";
     color: var(--themeText);
-    animation: words 20s infinite;
+    animation: words 24s infinite;
 }
 
 .text-animation span::after{
@@ -790,48 +983,56 @@ button
 
 @keyframes words{
     0%,
-    20%{
-        content: "Designer";
+    16%{
+        content: "React Developer";
     }
-    21%,
-    40%{
-        content: "Web Desinger";
+    17%,
+    33%{
+        content: "Full Stack Engineer";
     }
-    41%,
-    60%{
+    34%,
+    50%{
+        content: "MERN Stack Dev";
+    }
+    51%,
+    67%{
+        content: "Frontend Developer";
+    }
+    68%,
+    84%{
         content: "UI / UX Designer";
     }
-    61%,
-    80%{
-        content: "Web Developer";
-    }
-    81%,
+    85%,
     100%{
         content: "Software Engineer";
     }
 }
 @keyframes typing{
-    10%,
-    15%,
+    8%,
+    13%,
+    25%,
     30%,
-    35%,
-    50%,
-    55%,
-    70%,
-    75%,
-    90%,
-    95%{
+    42%,
+    47%,
+    59%,
+    64%,
+    76%,
+    81%,
+    93%,
+    98%{
         width: 0% ;
     }
-    5%,
-    20%,
-    25%,
-    40%,
-    45%,
-    60%,
-    65%,
-    80%,
-    85%{
+    4%,
+    17%,
+    21%,
+    34%,
+    38%,
+    51%,
+    55%,
+    68%,
+    72%,
+    85%,
+    89%{
          width: calc(100% + 8px);
     }
 
@@ -947,6 +1148,155 @@ button
 
 
 /* education css ends  */
+
+
+/* stats section css starts */
+.stats-section {
+    background: linear-gradient(90deg, rgba(26,11,46,0.9), rgba(71,16,148,0.2), rgba(26,11,46,0.9));
+    border-top: 1px solid rgba(113, 39, 186, 0.3);
+    border-bottom: 1px solid rgba(113, 39, 186, 0.3);
+}
+
+.stat-card {
+    padding: 1.2rem;
+}
+
+.stat-number {
+    font-size: 2.4rem;
+    font-weight: 800;
+    font-family: 'Preahvihear', sans-serif;
+    line-height: 1;
+    text-shadow: 0 0 20px var(--themeText);
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+/* stats section css ends */
+
+
+/* skills section css starts */
+.skill-category-card {
+    background: linear-gradient(145deg, rgb(24, 11, 46), rgb(71, 16, 148));
+    border-radius: 15px;
+    padding: 2rem;
+    height: 100%;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(113, 39, 186, 0.2);
+}
+
+.skill-category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(113, 39, 186, 0.3);
+}
+
+.skill-cat-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--themeText);
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tag {
+    background: rgba(113, 39, 186, 0.2);
+    border: 1px solid rgba(113, 39, 186, 0.5);
+    color: rgba(255,255,255,0.9);
+    font-size: 0.78rem;
+    padding: 4px 12px;
+    border-radius: 50px;
+    transition: background 0.2s ease;
+}
+
+.skill-tag:hover {
+    background: rgba(113, 39, 186, 0.5);
+}
+/* skills section css ends */
+
+
+/* experience enhancements css starts */
+.exp-date {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--themeText);
+    background: rgba(113, 39, 186, 0.15);
+    padding: 4px 12px;
+    border-radius: 50px;
+    border: 1px solid rgba(113, 39, 186, 0.4);
+    white-space: nowrap;
+}
+
+.exp-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.exp-bullets li {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.9rem;
+    padding: 4px 0 4px 1.2rem;
+    line-height: 1.7;
+    position: relative;
+}
+
+.exp-bullets li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--themeText);
+}
+
+.badge-company {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 600;
+    background: rgba(113, 39, 186, 0.25);
+    border: 1px solid rgba(113, 39, 186, 0.5);
+    color: rgba(255,255,255,0.8);
+    padding: 2px 8px;
+    border-radius: 50px;
+    margin-left: 8px;
+    vertical-align: middle;
+    letter-spacing: 0.03em;
+}
+/* experience enhancements css ends */
+
+
+/* projects enhancements css starts */
+.tech-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: rgba(113, 39, 186, 0.2);
+    border: 1px solid rgba(113, 39, 186, 0.5);
+    color: rgba(255,255,255,0.9);
+    padding: 3px 10px;
+    border-radius: 50px;
+}
+
+.fyp-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: var(--themeText);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 50px;
+    box-shadow: 0 0 12px rgba(113, 39, 186, 0.6);
+    z-index: 1;
+}
+/* projects enhancements css ends */
 
 
 footer
